@@ -77,7 +77,7 @@ object HivePartionTask {
 
             tableDF.show(2)
             //开始写入HDFS
-            val tableFdfsPath = s"hdfs://hadoop-101:9820" +
+            val tableFdfsPath = s"hdfs://master:9000" + //TODO 修改
               s"${HIveConfig.rootPath}" +
               s"/${table}/${city}"
             tableDF.write.mode(SaveMode.Append).parquet(tableFdfsPath)

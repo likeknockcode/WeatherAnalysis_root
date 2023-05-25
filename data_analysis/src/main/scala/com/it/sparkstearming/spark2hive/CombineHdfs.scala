@@ -23,7 +23,7 @@ object CombineHdfs extends Serializable with Logging{
       HIveConfig.tables.foreach(table=>{
         val citys: List[String] = List("anshun","guiyang","liupanshui","zunyi","tongren","qianxinan","bijie","qiandongnan","qiannan")
         for (city <- citys){
-          val table_path = s"hdfs://hadoop-101:9820${HIveConfig.rootPath}/${table}/${city}"
+          val table_path = s"hdfs://master:9000${HIveConfig.rootPath}/${table}/${city}"
           val tableDF = spark.read.parquet(table_path) //所有的數據拿到了
           //3.獲取所有的文件
           val fs:FileSystem = HdfsAdmin.get().getFs

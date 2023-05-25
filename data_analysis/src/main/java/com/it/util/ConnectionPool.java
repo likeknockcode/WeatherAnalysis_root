@@ -19,10 +19,10 @@ public class ConnectionPool {
             if (connectionQueue == null) {
                 connectionQueue = new LinkedList<Connection>();
                 for (int i = 0;i < 36;i ++) {
-                    Connection conn = DriverManager.getConnection(
-                            "jdbc:mysql://hadoop-101:3306/weather?characterEncoding=utf8&?useSSL=false",
-                            "root",
-                            "_Qq3pw34w9bqa"
+                    Connection conn = DriverManager.getConnection(//TODO 修改
+                            "jdbc:mysql://master:3306/weather?characterEncoding=utf8&?useSSL=false",
+                            "hive",
+                            "hive"
                     );
                     connectionQueue.push(conn);
                 }

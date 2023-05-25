@@ -31,7 +31,7 @@ public class HdfsAdmin {
     private HdfsAdmin(Configuration conf, Logger logger){
         try {
             if(conf == null) conf = newConf();
-            conf.set("fs.defaultFS","hdfs://hadoop-101:9820");
+            conf.set("fs.defaultFS","hdfs://master:9000");//TODO 修改
             fs = FileSystem.get(conf);
         } catch (IOException e) {
             LOG.error("获取 hdfs的FileSystem出现异常。", e);

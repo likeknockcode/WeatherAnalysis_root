@@ -20,16 +20,16 @@
 	<!-- nn web 端访问地址-->
 	 <property>
 		 <name>dfs.namenode.http-address</name>
-		 <value>hadoop-101:9870</value>
+		 <value>master:50070</value>
 	 </property>
 	 <!-- 2nn web 端访问地址-->
 	 <property>
 		 <name>dfs.namenode.secondary.http-address</name>
-		 <value>hadoop-103:9868</value>
+		 <value>master:50090</value>
 	 </property>
 	 <!-- 测试环境指定 HDFS 副本的数量 1 -->
 	 <property>
 		 <name>dfs.replication</name>
-		 <value>1</value>
+		 <value>2</value>
 	 </property>
 </configuration>

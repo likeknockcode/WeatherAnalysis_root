@@ -57,8 +57,8 @@ object SparkWarning extends App {
     cityDS.foreachRDD(rdd=>{
      rdd.foreachPartition(partition=>{
        Class.forName("com.mysql.jdbc.Driver")
-       val connection = DriverManager.getConnection("jdbc:mysql://hadoop-101:3306/weather?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false","root","_Qq3pw34w9bqa")
-//       val sql1 = "truncate table warn"
+       val connection = DriverManager.getConnection("jdbc:mysql://master:3306/weather?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false","hive","hive")
+//       val sql1 = "truncate table warn"//TODO修改
 //       connection.prepareStatement(sql1).executeLargeUpdate()
        while (partition.hasNext){
          val map = partition.next()

@@ -47,18 +47,18 @@ object dataAnalysis {
         val DF_avg = spark.createDataFrame(result_avg, resultAvgSchema)
         val DF_max_min = spark.createDataFrame(result_max_min, resultSchema)
         DF_avg.write.mode("append")
-          .format("jdbc")
-          .option("url", "jdbc:mysql://hadoop-101:3306/weather?useSSL=false")
+          .format("jdbc")//TODO 修改
+          .option("url", "jdbc:mysql://master:3306/weather?useSSL=false")
           .option("dbtable", "avg_city") //表名
-          .option("user", "root")
-          .option("password", "_Qq3pw34w9bqa")
+          .option("user", "hive")
+          .option("password", "hive")
           .save()
         DF_max_min.write.mode("append")
           .format("jdbc")
-          .option("url", "jdbc:mysql://hadoop-101:3306/weather?useSSL=false")
+          .option("url", "jdbc:mysql://master:3306/weather?useSSL=false")
           .option("dbtable", "weather_city") //表名
-          .option("user", "root")
-          .option("password", "_Qq3pw34w9bqa")
+          .option("user", "hive")
+          .option("password", "hive")
           .save()
       }
     }

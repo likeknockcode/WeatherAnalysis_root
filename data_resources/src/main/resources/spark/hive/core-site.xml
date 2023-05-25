@@ -20,12 +20,12 @@
 	<!-- 指定 NameNode 的地址 -->
 	<property>
 		<name>fs.defaultFS</name>
-		<value>hdfs://hadoop-101:9820</value>
+		<value>hdfs://master:9000</value>
 	 </property>
 	 <!-- 指定 hadoop 数据的存储目录 -->
 	 <property>
 		 <name>hadoop.tmp.dir</name>
-		 <value>/opt/mod/hadoop-3.1.3/data</value>
+		 <value>/usr/local/data</value>
 	 </property>
 	<!-- 配置 HDFS 网页登录使用的静态用户为 root -->
 	 <property>
